@@ -1,0 +1,253 @@
+Got it — you need a **Windows FTK Imager practical** with a **self-created hacker scenario** and explanation of **how FTK Imager is used** in that case. This is a very common **digital forensics practical question**, so here’s a **ready-to-write scenario** you can use in your lab record. 🧪💻
+
+---
+
+# Practical: Using **FTK Imager** in Windows with a Hacker Scenario
+
+## Aim
+
+To create a forensic image of a suspected system and analyze digital evidence using **FTK Imager** on **Windows 10**.
+
+---
+
+# Hacker Scenario (You Can Write This in Your Record)
+
+**Scenario Title:**
+Unauthorized Data Theft by an Insider
+
+**Description:**
+A company employee is suspected of stealing confidential company files and sending them to an unknown external user. The system administrator noticed unusual USB activity and suspicious files on the employee’s computer. The suspected computer running **Windows 10** was seized for forensic investigation.
+
+A digital forensic investigator used **FTK Imager** to create a forensic image of the system without modifying original data and analyzed it to find hidden or deleted files.
+
+---
+
+# Steps to Perform FTK Imager Practical on Windows
+
+## Step 1: Install FTK Imager
+
+1. Download **FTK Imager** from official site
+2. Install it on **Windows**
+3. Open **FTK Imager**
+
+---
+
+# Step 2: Create Disk Image (Main Practical Step)
+
+In **FTK Imager**:
+
+1. Click:
+
+```text
+File → Create Disk Image
+```
+
+2. Select:
+
+```text
+Source Type → Physical Drive
+```
+
+3. Click **Next**
+
+4. Select the suspected drive
+   (example:)
+
+```text
+Drive 0 (C:)
+```
+
+5. Click **Finish**
+
+---
+
+# Step 3: Select Image Format
+
+Choose:
+
+```text
+E01 (Expert Witness Format)
+```
+
+Why E01?
+
+✔ Most used in forensics
+✔ Supports compression
+✔ Stores metadata
+✔ Supports verification
+
+---
+
+# Step 4: Enter Case Details
+
+Fill:
+
+```text
+Case Number: 101
+Evidence Number: 001
+Examiner Name: Your Name
+Description: Insider Data Theft Case
+```
+
+Click:
+
+```text
+Add → Select Destination Folder → Start
+```
+
+FTK Imager will:
+
+✔ Create forensic image
+✔ Generate hash values
+✔ Preserve evidence integrity
+
+---
+
+# Step 5: Verify Image
+
+After imaging:
+
+```text
+File → Verify Image
+```
+
+Select:
+
+```text
+.E01 image file
+```
+
+Click:
+
+```text
+Verify
+```
+
+This checks:
+
+* MD5 Hash
+* SHA1 Hash
+
+Ensures:
+
+✔ No data alteration
+✔ Evidence authenticity
+
+---
+
+# Step 6: Analyze the Evidence
+
+Add image:
+
+```text
+File → Add Evidence Item
+```
+
+Select:
+
+```text
+Image File
+```
+
+Browse:
+
+```text
+Select .E01 file
+```
+
+Now investigator can:
+
+✔ View files
+✔ Recover deleted files
+✔ Find suspicious files
+✔ Extract evidence
+
+Example suspicious findings:
+
+* Hidden folder
+* Deleted documents
+* Unauthorized USB file copies
+
+---
+
+# Step 7: Extract Suspicious Files
+
+Right-click suspicious file:
+
+```text
+Export Files
+```
+
+Save to:
+
+```text
+Evidence Folder
+```
+
+Used for:
+
+✔ Further analysis
+✔ Reporting
+
+---
+
+# How FTK Imager Helps in This Hacker Scenario
+
+In this scenario, **FTK Imager** is used to:
+
+1. Create an exact copy of suspect system
+2. Preserve original evidence
+3. Recover deleted files
+4. Identify stolen documents
+5. Verify evidence integrity using hash values
+
+Without modifying original system.
+
+---
+
+# Expected Results (Write in Record)
+
+A forensic image of the suspected system was successfully created using **FTK Imager**. The image was verified using MD5 and SHA1 hash values. Suspicious files related to unauthorized data transfer were identified and extracted for further investigation.
+
+---
+
+# Conclusion (Write in Record)
+
+The forensic imaging process using **FTK Imager** ensured safe acquisition and verification of digital evidence. The tool helped identify suspicious and deleted files, supporting the investigation of unauthorized data theft.
+
+---
+
+# Extra: Another Short Hacker Scenario (Optional)
+
+If your teacher asks for **multiple scenarios**, use this:
+
+**Scenario:**
+A hacker installed malware on a computer to steal login credentials. Using **FTK Imager**, investigators created a disk image and found malicious files in temporary folders and browser cache.
+
+---
+
+# Viva Questions You May Get 🎯
+
+**1. What is FTK Imager?**
+A digital forensic tool used to create forensic copies of digital evidence.
+
+**2. What is forensic imaging?**
+Creating an exact bit-by-bit copy of storage media.
+
+**3. What is hash value?**
+A digital fingerprint used to verify integrity of data.
+
+**4. Why not analyze original disk?**
+To prevent evidence tampering.
+
+**5. What is E01 format?**
+A forensic image format widely used in investigations.
+
+---
+
+If you want, I can also provide:
+
+✅ **Full practical record format (Aim, Tools, Procedure, Result)**
+✅ **Screenshots-style step explanation**
+✅ **Another realistic hacker scenario**
+✅ **FTK Imager report writing format**
