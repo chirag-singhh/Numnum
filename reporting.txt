@@ -1,0 +1,43 @@
+Aim:
+The aim of this lab session is to empower students with the knowledge and skills necessary to
+effectively report cybercrime incidents online. By understanding and implementing a comprehensive
+checklist, students will be equipped to combat cyber threats and enhance online safety and security.
+Tools:
+1. Digital Evidence Collection Tools: Explore tools such as Snagit, Camtasia, and FTK Imager
+to gather and document evidence related to cybercrime incidents.
+2. Online Reporting Platforms: Explore reputable online platforms and portals provided by law
+enforcement agencies, cybersecurity organizations, and internet service providers for
+reporting cybercrimes. Examples include:
+Cybercrime Reporting Portal by the FBI (https://www.ic3.gov/)
+Report Cybercrime Online by Action Fraud (https://www.actionfraud.police.uk/)
+Cybercrime Reporting Portal by INTERPOL
+(https://www.interpol.int/en/Crimes/Cybercrime/Report-cybercrime)
+3. Cybercrime Reporting Guidelines: Explore official guidelines and resources published by
+relevant authorities, outlining the procedures and requirements for reporting cybercrimes.
+4. Case Studies: Go through real-world case studies of cybercrime incidents and reporting
+processes
+Theory:
+Cybercrime reporting is integral to cyber security and law enforcement efforts in combating online
+threats. A comprehensive checklist for reporting cybercrimes typically involves several key steps:
+
+1. Document Incident Details: Record pertinent information such as the type of cybercrime, date
+and time of occurrence, and description of the incident.
+
+2. Preserve Evidence: Utilize digital evidence collection tools to gather and preserve evidence,
+including screenshots, email communications, logs, and other digital artifacts related to the
+cybercrime.
+3. Identify Reporting Channels: Determine the appropriate authorities or platforms for reporting
+based on the nature of the cybercrime, such as law enforcement agencies, cybersecurity
+organizations, or internet service providers.
+4. Submit Report: Follow prescribed procedures to submit a detailed report of the cybercrime
+incident, providing all relevant information and evidence collected.
+
+
+In this lab session, we learned the importance of reporting cybercrime incidents in a timely and accurate manner. We understood how to document incident details such as date, time, type of cybercrime, and description of the incident. We also learned how to collect and preserve digital evidence using appropriate tools like screenshots, logs, and communication records.
+
+The experiment helped us identify suitable reporting channels such as law enforcement agencies, cybersecurity organizations, and online reporting portals. We also gained knowledge about following proper procedures to submit cybercrime reports using official platforms.
+
+Overall, this lab enhanced our awareness of cybercrime reporting methods and improved our ability to respond effectively to cyber threats. It emphasized the importance of proper documentation, evidence preservation, and responsible reporting to ensure online safety and security.
+
+https://www.cybercrime.gov.in/
+sancharsathi
