@@ -1,0 +1,149 @@
+Aim: Scanning of Target machine using NMAP tool in KALI.
+Theory:
+NMAP tool in KALI
+Nmap stands for Network Mapper which is a free Open source command-line tool. Nmap is an
+information-gathering tool used for recon reconnaissance. Basically, it scans hosts and services on a
+computer network which means that it sends packets and analyses the response. Listed below are
+the most useful Scans which you can run with the help of Nmap tools.
+
+1. Basic Scan:
+Command:
+1. nmap 192.168.1.1
+Explanation:
+Performs a default scan on the target and scans the top 1000 commonly used ports.
+
+2. Scan Multiple Targets:
+Commands:
+nmap 192.168.1.1 192.168.1.10
+nmap 192.168.1.1-20
+nmap 192.168.1.0/24
+Explanation:
+Scans multiple hosts or an entire subnet.
+
+3. TCP SYN Scan:
+Command:
+nmap -sS 192.168.1.1
+Explanation:
+Performs a stealth scan by sending SYN packets without completing the handshake.
+
+4. TCP Connect Scan:
+Command:
+nmap -sT 192.168.1.1
+Explanation:
+Performs a full TCP connection. Useful when user does not have root privileges.
+
+5. UDP Scan:
+Command:
+nmap -sU 192.168.1.1
+Explanation:
+Scans UDP ports to detect open UDP services.
+
+
+6. Specific Port Scan:
+Command:
+nmap -p 80,443 192.168.1.1
+Explanation:
+Scans only specified ports.
+
+
+7. Service Version Detection:
+Command:
+nmap -sV 192.168.1.1
+Explanation:
+Detects versions of running services.
+
+8. OS Detection:
+Command:
+nmap -O 192.168.1.1
+Explanation:
+Attempts to identify the operating system.
+
+9. Aggressive Scan:
+Command:
+nmap -A 192.168.1.1
+Explanation:
+Performs OS detection, version detection, script scanning, and traceroute.
+
+
+10. No Ping Scan:
+Command:
+nmap -Pn 192.168.1.1
+Explanation:
+Skips host discovery and treats all hosts as online.
+
+
+11. Fragment Packets:
+Command:
+nmap -f 192.168.1.1
+Explanation:
+Splits packets into small fragments to evade firewalls.
+
+
+12. Default Script Scan:
+Command:
+nmap -sC 192.168.1.1
+Explanation:
+Runs default Nmap scripts for basic vulnerability detection.
+
+
+13. Vulnerability Scan:
+Command:
+nmap --script vuln 192.168.1.1
+Explanation:
+Runs vulnerability scripts to identify known vulnerabilities.
+
+14. HTTP Enumeration:
+Command:
+nmap --script http-enum 192.168.1.1
+Explanation:
+Enumerates directories and files on web servers.
+
+
+15. Fast Scan:
+Command:
+nmap -F 192.168.1.1
+Explanation:
+Scans fewer ports for quick results.
+
+
+16. Timing Template:
+Command:
+nmap -T4 192.168.1.1
+Explanation:
+
+Increases scanning speed.
+
+
+17. Full Port Scan:
+Command:
+nmap -p- 192.168.1.1
+Explanation:
+Scans all 65535 ports.
+
+
+18. Top Ports:
+Command:
+nmap --top-ports 100 192.168.1.1
+Explanation:
+Scans the top 100 commonly used ports.
+
+
+19. ACK Scan:
+Command:
+nmap -sA 192.168.1.1
+Explanation:
+Used to detect firewall rules.
+
+
+20. Decoy Scan:
+Command:
+nmap -D RND:10 192.168.1.1
+Explanation:
+Uses fake IP addresses to hide real source.
+
+
+21. Network Discovery:
+Command:
+nmap -sn 192.168.1.0/24
+Explanation:
+Discovers live hosts without port scanning.

@@ -1,0 +1,90 @@
+nikto -h duocortex.in
+nikto -h google.com
+
+nikto -h duocortex.com -ssl
+nikto -h google.com -port 8083 
+nikto -h example.com -useproxy proxy.ip.address.here
+nikto -h http://example.com -useproxy http://192.168.1.5:8080
+nikto -h example.com -id username:password
+nikto -h http://example.com -id admin:admin123
+nikto -h example.com -IgnoreCode 301
+nikto -h example.com -nocache
+
+nikto -h http://example.com -useproxy http://127.0.0.1:8080 -IgnoreCode 301 -nocache
+
+
+
+Aim: To study about Vulnerability scanning of Web server using Nikto tool in KALI LINUX.
+
+Learning Objective: To understand Vulnerability scanning of Web server using Nikto in
+KALI LINUX.
+Theory:
+What is Nikto?
+Nikto, also known as Nikto2, is an open source (GPL) and free-to-use web server scanner which
+performs vulnerability scanning against web servers for multiple items including dangerous files
+and programs, and checks for outdated versions of web server software. It also checks for server
+configuration errors and any possible vulnerabilities they might have introduced.
+The  Nikto vulnerability scanner project  is a fast-moving effort, frequently updated with the latest
+known vulnerabilities. This allows you to scan your web servers with confidence as you search
+for any possible issues.
+Main features:
+ Nikto is free to use, open source and frequently updated
+ Can be used to scan any web server (Apache, Nginx, Lighttpd, Litespeed, etc.)
+ Scans against 6,700+ known vulnerabilities and version checks for 1,250+ web servers
+(and growing)
+ Scans for configuration-related issues such as open index directories
+ SSL certificate scanning
+ Ability to scan multiple ports on a server with multiple web servers running
+ Ability to scan through a proxy and with http authentication
+ Ability to specify maximum scan time, exclude certain types of scans and unusual report
+headers seen as well
+Nikto commands to perform vulnerability scanning
+1. Running a basic website scan
+
+nikto -h example.com
+
+SCREEN SHOT:
+
+2. Running a scan on a website with SSL
+Nikto also has an SSL scanner mode, for SSL certificates installed on a website. With this you
+can get SSL cipher and issuer information.
+To run a website SSL scan run:
+nikto -h example.com –ssl
+SCREEN SHOT:
+
+3. Scanning specific ports with Nikto
+On certain deployments, web servers are run on non-standard ports like 8081 or 8080, or
+multiple web servers are run on the same host on different network ports. It&#39;s therefore vital to
+have the ability to scan specific ports as well as the main 80 and 443 ports.
+This can be achieved by running the command:
+nikto -h example.com -port 8083
+SCREEN SHOT:
+
+4. Scanning through a network proxy
+Certain websites may only be available through a network proxy or specific IP, and this feature
+allows Nikto to scan the website through that proxy address as well:
+
+nikto -h example.com -useproxy proxy.ip.address.here
+SCREEN SHOT:
+
+5. Scanning websites which require authentication
+Nikto also includes the ability to scan websites which are protected by http authentication:
+nikto -h example.com -id username:password
+SCREEN SHOT:
+
+6. Ignore certain HTTP codes
+When running a web server scan with Nikto, it&#39;s important to ignore certain HTTP codes such as
+301 redirects, to prevent the scan from scanning unnecessary objects. In such a scenario we can
+use the -IgnoreCode flag:
+nikto -h example.com -IgnoreCode 301
+SCREEN SHOT:
+
+7. Disable response cache
+Modern web servers often cache websites to save on CPU performance as well as to serve
+websites more quickly. This is why it&#39;s possible to get a &quot;cached&quot; version of the website when
+trying a scan.
+This cached website may not have all the vulnerabilities present, or it may still have
+vulnerabilities present which were cached, so it&#39;s important to flush the cache as well as use the -
+nocache flag to scan a non-cached version of the website.
+
+nikto -h example.com -nocache

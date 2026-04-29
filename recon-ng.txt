@@ -1,0 +1,183 @@
+recon-ng
+workspaces lists
+workspaces help
+workspaces create pentest
+
+marketplace help
+marketplace search
+marketplace load all
+marketplace install all
+
+modules load profiler
+db insert profiles
+namedalo enter krte jao
+
+run 
+show profiles
+
+modules load hackertarget
+help
+info
+
+options set SOURCE tesla.com
+run
+show hosts
+
+webinterface kaise khole?new terminal
+
+cd /usr/share/recon-ng
+ls
+./recon-web
+
+127.0.0.1:5000
+
+--------------------------------------------------------------------------------------------
+Aim: To study Reconnaissance with the help of recon-ng tool in KALI LINUX.
+
+Learning Objective: To understand Reconnaissance using recon-ng in KALI LINUX.
+Theory:
+Recon-ng Information Gathering Tool in Kali Linux
+In Kali Linux, Recon-ng is a free and open-source tool available on GitHub. Recon-ng is built
+on Open-Source Intelligence (OSINT), the most simple and effective reconnaissance tool. Recon-ng UI
+is fairly similar to that of Metasploit 1 and Metasploit 2. On kali Linux, we can use Recon-ng to execute
+a command-line interface. We can use this tool to obtain our target (domain) information. The
+interactive console has a variety of useful features, including command completion and contextual
+help. This tool is written in Python. It contains numerous modules such as database interaction,
+interactive help, command completion, Recon-ng that offer a powerful environment where open-
+source web-based reconnaissance can be performed, and we can collect any information.
+Features of Recon-ng
+ Recon-ng is a comprehensive set of information gathering modules. It features a large number of
+modules that can be used to gather information.
+ Recon-ng is a simple and effective reconnaissance tool.
+ Recon-ng is a free and open-source tool that we can download and use without charge.
+ Recon-ng is a tool for gathering information and assessing the vulnerability of web applications.
+ Pentesters will find it easier to work with Recon-ng because it can target a single domain and
+find all of its subdomains.
+ In order to scan IoT devices, Recon-ng uses the Shodan search engine.
+ The interactive console of Recon-ng&#39;s offers a number of useful features.
+ ng is a powerful tool for finding flaws in the code of web apps and websites.
+ ng works and acts as a web application/website scanner.
+ The interface of Recon-ng is much similar to metasploitable 1 and metasploitable 2, making it
+simple to use.
+ The modules of Recon-ng are as follows: Geoip lookup, banner grabbing, DNS lookup, and port
+scanning. These modules make this tool extremely powerful.
+How to use Recon-ng:
+
+Command 1: Start Tool &amp; Workspace
+recon-ng
+– Starts the Recon-ng framework and opens the interactive reconnaissance shell.
+Screenshot:
+
+workspaces create vapt1
+– Creates a new project named vapt1. All collected data will be stored separately in this workspace.
+
+Screenshot:
+
+workspaces load vapt1
+– Loads the workspace so that all further operations are performed inside it.
+Screenshot:
+
+Command 2: Subdomain Enumeration (Google)
+modules load recon/domains-hosts/google_site_web
+– Loads the module that uses Google search engine to find subdomains of the target.
+set SOURCE google.com
+– Sets the target domain whose subdomains will be discovered.
+Screenshot:
+
+run
+– Executes the module and performs OSINT search.
+Screenshot:
+
+show hosts
+– Displays all discovered subdomains and their IP addresses.
+Screenshot:
+
+Command 3: Subdomain Enumeration (Bing)
+modules load recon/domains-hosts/bing_domain_web
+– Loads Bing-based reconnaissance module.
+Screenshot:
+
+set SOURCE microsoft.com
+– Defines Microsoft domain as target.
+Screenshot:
+
+run
+– Starts the enumeration process.
+Screenshot:
+
+show hosts
+– Shows the collected results.
+Screenshot:
+
+Command 4:
+Workspaces help
+Screenshot:
+
+Workspaces create vapt1
+Screenshot:
+
+Workspaces list
+Screenshot:
+
+Workspaces remove vapt1
+Screenshot:
+
+Workspaces list
+Screenshot:
+
+Workspaces create vapt1
+Screenshot:
+
+Marketplace help
+Screenshot:
+
+Marketplace search
+
+Screenshot:
+
+Marketplace load all
+Screenshot:
+
+Marketplace install profiler
+Screenshot:
+
+Modules load recon/profiles-profiles/profiler
+Screenshot:
+
+Db insert profiles
+Screenshot:
+
+Run
+Screenshot:
+
+Show profiles
+Screenshot:
+
+Modules load hackertarget
+Screenshot:
+
+Help
+Screenshot:
+
+Info
+Screenshot:
+
+Show options
+Screenshot:
+
+Options set source tesla.com
+Screenshot:
+
+Run
+Screenshot:
+
+Show hosts
+Screenshot:
+
+Recon-ng modules
+Modules are grouped together under various categories and can be found searching on marketplace
+ Discovery
+ Exploitation
+ Import
+ Recon
+ reporting

@@ -1,0 +1,60 @@
+To demonstrate a brute-force attack using Hydra for your practical exam, you first need a "victim" account on your Kali Linux machine. 
+
+Setting this up involves creating a new system user and ensuring the **SSH service** is running, as Hydra needs a service to target.
+
+### 1. Create the Dummy User
+Open your terminal and run the following command. We will create a user named `testuser` for this demonstration.
+
+```bash
+sudo adduser testuser
+```
+
+* You will be prompted to enter a password. For a successful demonstration, choose something simple but identifiable (e.g., `password123`).
+* You can skip the full name and room number prompts by pressing **Enter**.
+
+### 2. Install and Start the SSH Service
+Hydra is most commonly demonstrated against the SSH protocol. If you don't have the SSH server installed, run:
+
+```bash
+sudo apt update && sudo apt install openssh-server -y
+```
+
+Next, start the service so Hydra has a port to talk to:
+
+```bash
+sudo systemctl start ssh
+```
+
+> **Note:** To verify the service is active, you can run `sudo systemctl status ssh`. You should see a green "active (running)" message.
+
+### 3. Verify Your IP Address
+Hydra needs to know where to send the login attempts. Find your local IP address using:
+
+```bash
+ip a
+```
+Look for the `inet` address under your network interface (usually `eth0` or `wlan0`). It will look like `192.168.x.x` or `10.0.x.x`.
+
+---
+
+### 4. Running the Hydra Demonstration
+Now that the account exists and the service is live, you can run Hydra. In a real exam scenario, you would use a "wordlist" (a file full of potential passwords). 
+
+Here is the standard syntax to attack the account you just created:
+
+```bash
+hydra -l testuser -P /usr/share/wordlists/rockyou.txt ssh://<YOUR_IP_ADDRESS>
+```
+
+**Breaking down the command:**
+* `-l testuser`: Specifies the username you created.
+* `-P /usr/share/wordlists/rockyou.txt`: Points to the standard password list in Kali.
+* `ssh://<YOUR_IP_ADDRESS>`: Defines the protocol and the target machine.
+
+### Exam Tip: Speeding it up
+If you are in a timed practical exam, searching through the massive `rockyou.txt` list might take too long. You can create a tiny custom wordlist for a faster "hit":
+
+1.  Create a file: `nano pass.txt`
+2.  Type 5–10 random passwords, including the correct one (`password123`).
+3.  Save and exit (**Ctrl+O**, **Enter**, **Ctrl+X**).
+4.  Run Hydra using `-P pass.txt` instead.

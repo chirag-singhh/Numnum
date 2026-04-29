@@ -1,0 +1,225 @@
+sudo msfdb init
+sudo msfdb
+sudo msfdb start
+msfdb status
+msfdb init
+msfconsole –q
+exploit/windows/vnc/realvnc_client
+back
+help
+info
+Msf>search flash
+MSF>help show
+MSF> Use exploit/multi/browser/ adobe_flash_shader_drawing_fill
+msf> show options
+exploit(adobe_flash_shader_drawing_fill) Set SRVHOST 192.168.0.100
+exploit(adobe_flash_shader_drawing_fill) Set SRVHOST 80
+exploit(adobe_flash_shader_drawing_fill) show options
+exploit(adobe_flash_shader_drawing_fill) show payload
+exploit(adobe_flash_shader_drawing_fill) show target
+exploit(adobe_flash_shader_drawing_fill) set target 1
+exploit(adobe_flash_shader_drawing_fill) show encoders
+exploit(adobe_flash_shader_drawing_fill) show nopes
+exploit(adobe_flash_shader_drawing_fill) show advanced
+
+
+
+
+
+
+
+
+
+Aim: To study about Metasploit tool in KALI LINUX.
+
+Learning Objective: To understand Exploits using Metasploit tool in KALI LINUX.
+Theory:
+What is Metasploit?
+Metasploit is one of the best penetration testing frameworks that help a business find out and shore up
+vulnerabilities in their systems before exploitation by hackers. To put it simply, Metasploit allows
+hacking with permission.
+Metasploit is the world’s leading open-source penetrating framework used by security engineers as a
+penetration testing system and a development platform that allows to create security tools and exploits.
+The framework makes hacking simple for both attackers and defenders. 
+
+The various tools, libraries, user interfaces, and modules of Metasploit allow a user to configure an
+exploit module, pair with a payload, point at a target, and launch at the target system. Metasploit’s large
+and extensive database houses hundreds of exploits and several payload options.
+
+A Metasploit penetration test begins with the information gathering phase, wherein Matsploit integrates
+with various reconnaissance tools like Nmap, SNMP scanning, and Windows patch enumeration, and
+Nessus to find the vulnerable spot in your system. Once the weakness is identified, choose an exploit and
+payload to penetrate the chink in the armor. If the exploit is successful, the payload gets executed at the
+target, and the user gets a shell to interact with the payload. One of the most popular payloads to attack
+Windows systems is Meterpreter – an in-memory-only interactive shell. Once on the target machine,
+Metasploit offers various exploitation tools for privilege escalation, packet sniffing, pass the hash,
+keyloggers, screen capture, plus pivoting tools. Users can also set up a persistent backdoor if the target
+machine gets rebooted. 
+
+What Is the Purpose of Metasploit?
+
+Metasploit is a powerful tool used by network security professionals to do penetration tests, by system
+administrators to test patch installations, by product vendors to implement regression testing, and by
+security engineers across industries. The purpose of Metasploit is to help users identify where they are
+
+most likely to face attacks by hackers and proactively mend those weaknesses before exploitation by
+hackers. 
+
+Who Uses Metasploit?
+
+With the wide range of applications and open-source availability that Metasploit offers, the framework is
+used by professionals in development, security, and operations to hackers. The framework is popular with
+hackers and easily available, making it an easy to install, reliable tool for security professionals to be
+familiar with even if they don’t need to use it.
+
+Metasploit Uses and Benefits
+
+Metasploit provides you with varied use cases, and its benefits include:
+
+ Open Source and Actively Developed – Metasploit is preferred to other highly paid penetration testing
+tools because it allows accessing its source code and adding specific custom modules. 
+ Ease of Use – it is easy to use Metasploit while conducting a large network penetration test. Metasploit
+conducts automated tests on all systems in order to exploit the vulnerability. 
+ Easy Switching Between Payloads – the set payload command allows easy, quick access to switch
+payloads. It becomes easy to change the meterpreter or shell-based access into a specific operation. 
+ Cleaner Exits – Metasploit allows a clean exit from the target system it has compromised.
+ Friendly GUI Environment – friendly GUI and third-party interfaces facilitate the penetrate testing
+project.
+
+Metasploit Framework
+
+Following is the filesystem of Metasploit Framework (MSF):
+
+ Data – contains editable files for storing binaries, wordlist, images, templates, logos, etc
+ Tools – contains command utilities including plugins, hardware, memdump
+
+ Scripts – contains Meterepreter scripts, resources to run functionalities
+ Modules – contains actual MSF modules 
+ Plugins – additional extensions for automating manual tasks
+ Documentation – documents and pdfs concerning Metasploit framework
+ Lib – contains libraries required to run Metasploit from start to end
+
+Metasploit Framework Commands
+
+You an have everything up and running, by starting the PostgreSQL service and set it up just by doing:
+1. kali@kali:~$ sudo msfdb init
+
+Screen Shot
+
+2. To help interactive with various parts of the Metasploit configuration there is msfdb:
+kali@kali:~$ sudo msfdb
+Screen Shot
+
+Start the Kali PostgreSQL Service
+3. Metasploit uses PostgreSQL as its database so it needs to be launched first:
+kali@kali:~$ sudo msfdb start
+Screen Shot
+
+4. You can verify that PostgreSQL is running by checking the output of ss -ant and making sure
+that port 5432 is listening, or using sudo msfdb status:
+kali@kali:~$ sudo msfdb status
+
+Screen Shot
+
+5. Initialize the Metasploit PostgreSQL Database
+With PostgreSQL up and running, we next need to create and initialize the msf database:
+kali@kali:~$ sudo msfdb init
+
+Screen Shot
+6. Launch msfconsole in Kal
+Now that the PostgreSQL service is up and running and the database is initialized, you can
+launch msfconsole and verify database connectivity with the db_status command as shown below:
+kali@kali:~$ msfconsole –q
+Screen Shot
+
+Metasploit commands
+Use of back and exit commands
+1. msf &gt;exploit/windows/vnc/realvnc_client
+Screen Shot
+2. msf exploit(realvnc_client) &gt; back
+Screen Shot
+
+3. Help command
+msf exploit(realvnc_client) &gt; help
+Screen Shot
+
+4. Info command
+msf exploit(realvnc_client) &gt; info
+Screen Shot
+
+5. Search Command
+Msf &gt; search flash
+Screen Shot
+
+6. Metasploit command for keywords
+
+We have learned the use of Metasploit commands, which are used in the activation of an exploit on
+msfconsole. We have also learned the use command to change the context of the command line to the
+exploit. Now we will learn about the exploit parameter, how to show them by using the set command,
+and how to change them. How we can show the targets, evasion, advanced and payload option will also
+learn in this section. The available parameters for the command show will be displayed using the help
+show command, as shown below:
+msf &gt; help show
+Screen Shot
+Show options
+If the command line is in the context of an exploit, available parameters for an exploit will be shown by
+the show options command. Now we will use the exploit named adobe_flash_shader_drawing_fill with
+the use command as follows:
+1. msf &gt; Use exploit/multi/browser/ adobe_flash_shader_drawing_fill  
+Followed by the command show options
+1. msf &gt; show options  
+Screen Shot
+In the above screenshot, total 6 options are contained in the flash exploit, and we are required only 2:
+o Retries
+o SRVHOST (Required)
+o SRVPORT (Required)
+o SSL
+o SSLCert
+o URLPath
+Under the module option, the currently selected target is returned by the show options command. For the
+selected exploit, 0 is the default target, which is Windows.
+Now we will use the set command to change the default values. The option name and new value will
+follow the set command:
+
+The value of SRVHOST will be changed to 192.168.0.100 by using the command Set SRVHOST
+192.168.0.100. The port 8080 will be changed to 80 by using the command Set SRVPORT 80.
+msf &gt; exploit(adobe_flash_shader_drawing_fill) Set SRVHOST 192.168.0.100
+Screen Shot
+
+msf &gt; exploit(adobe_flash_shader_drawing_fill) Set SRVHOST 80
+Screen Shot
+msf &gt; exploit(adobe_flash_shader_drawing_fill) show options
+Screen Shot
+2. Show payloads
+For the exploit, a list of compatible payloads will be returned by msfconsole using the show payloads
+option. In the given example of flash player exploits, a few compatible payloads are returned by
+msfconsole as follows:
+msf &gt; exploit(adobe_flash_shader_drawing_fill) show payloads
+Screen shot
+3. Show targets
+A list of OS which has vulnerability in the selected exploit is retuned by the show target command.
+For the exploit named adobe_flash_shader_drawing_fil, the following output will be returned when we
+run the show targets command as follows:
+msf &gt; exploit(adobe_flash_shader_drawing_fill) show targets
+Screen Shot
+4. set target 1  
+The list of payloads can be reduced by setting the targets because it will show only those payloads with
+which the target seems compatible:
+
+msf &gt; exploit(adobe_flash_shader_drawing_fill) set targets 1
+5. Show advanced
+For the exploit, if we want to look at the advanced options, we can use show advanced command as
+follows:
+msf &gt; exploit(adobe_flash_shader_drawing_fill) show advanced
+Screen Shot
+6. Show encoders
+The compatible encoder will be returned by the show encoders command. Simple IPS/IDS is evaded by
+the encoders, which are looking for certain bytes of our payload as follows:
+msf &gt; exploit(adobe_flash_shader_drawing_fill) show encoders
+Screen shot
+7. Show nops
+The list of NOP generators will be returned by the show nops command. NOP stands for No Operation.
+If we want to bypass the simple IDS/IPS signature of common NOP sleds, NOP will be used to change
+the NOP sled&#39;s pattern. Using the CPU architecture, the generators of NOP will start.
+msf &gt; exploit(adobe_flash_shader_drawing_fill) show nopes
+Screen shot
