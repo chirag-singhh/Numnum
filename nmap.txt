@@ -147,3 +147,70 @@ Command:
 nmap -sn 192.168.1.0/24
 Explanation:
 Discovers live hosts without port scanning.
+
+
+
+
+
+NMAP IMPORTANT COMMANDS (20 COMMANDS)
+
+1. nmap google.com
+   Basic scan of a domain
+
+2. nmap localhost
+   Scan local machine
+
+3. nmap 127.0.0.1
+   Scan loopback address
+
+4. nmap -p 80 google.com
+   Scan specific port
+
+5. nmap -p 1-1000 google.com
+   Scan port range
+
+6. nmap -p- google.com
+   Scan all ports (1–65535)
+
+7. nmap -F google.com
+   Fast scan (top 100 ports)
+
+8. nmap -sS google.com
+   TCP SYN (stealth) scan
+
+9. nmap -sT google.com
+   TCP connect scan
+
+10. nmap -sU google.com
+    UDP scan
+
+11. nmap -sV google.com
+    Detect service versions
+
+12. nmap -O google.com
+    Detect operating system
+
+13. nmap -A google.com
+    Aggressive scan (OS + version + scripts)
+
+14. nmap -Pn google.com
+    Skip host discovery
+
+15. nmap -sn google.com
+    Ping scan (find live hosts)
+
+16. nmap --open google.com
+    Show only open ports
+
+17. nmap -T4 google.com
+    Faster scan timing
+
+18. nmap --script=default google.com
+    Run default NSE scripts
+
+19. nmap --script=vuln google.com
+    Scan for vulnerabilities
+
+20. nmap -oN output.txt google.com
+    Save output to file
+
